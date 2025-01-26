@@ -1,0 +1,12 @@
+default:
+  target: dev 
+  outputs:
+    dev:
+      type: bigquery 
+      project: symbolic-base-447322-b6
+      dataset: store_schema 
+      threads: 1 
+      keyfile: /Users/rowanpersson/Downloads/symbolic-base-447322-b6-fcd88c3ad057.json
+      timeout_seconds: 300 
+      location: US 
+      priority: interactive 

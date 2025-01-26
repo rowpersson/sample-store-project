@@ -6,7 +6,8 @@ SELECT
     id AS order_id,
     userId AS user_id,
     date AS transaction_date,
-    products.productId AS product_id,
-    products.quantity AS product_quantity
+    product.productId AS product_id,
+    product.quantity AS product_quantity,
     __v AS version
-FROM stg_carts
+FROM stg_carts,
+UNNEST(products) AS product
