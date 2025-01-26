@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: store_schema  # schema in BigQuery
+    tables:
+      - name: carts  
+        description: "This table contains cart details for orders"
+      - name: products
+        description: "This table contains information for all products"
+      - name: users
+        description: "This table contains information for all users/customers"
