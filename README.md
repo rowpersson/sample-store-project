@@ -7,27 +7,27 @@ You can find all of the relevant models in the dbt-project folder, while the sou
 The dbt project takes shape using this folder and file structure:
 ```bash
 /sample-store-project
-├── data-pipeline
+├── /data-pipeline
 ├── /dbt-project
 │ ├── /models
-│ │ ├── marts
-│ │ │ ├── analytics
+│ │ ├── /marts
+│ │ │ ├── /analytics
 │ │ │ │ ├── monthly_sales.sql
 │ │ │ │ ├── top_selling_products.sql
-│ │ │ ├── core
+│ │ │ ├── /core
 │ │ │ │ ├── customer_order_summary.sql
 │ │ │ │ ├── order_details.sql
 │ │ │ │ ├── product_sales.sql  
-│ │ │ ├── reporting  
+│ │ │ ├── /reporting  
 │ │ │ │ ├── order_level_report.sql
-│ │ ├── staging
+│ │ ├── /staging
 │ │ │ ├── sources.yml
 │ │ │ ├── stg_carts.sql
 │ │ │ ├── stg_products.sql
 │ │ │ ├── stg_users.sql
-│ │ ├── seeds
-│ │ ├── snapshots
-│ │ ├── tests  
+│ │ ├── /seeds
+│ │ ├── /snapshots
+│ │ ├── /tests  
 │ │ │ ├── carts_data_quality.sql
 │ │ │ ├── product_data_quality.sql
 │ │ │ ├── users_data_quality.sql
