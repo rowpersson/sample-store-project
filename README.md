@@ -1,37 +1,40 @@
-Hello! Welcome to the dbt project for the fake API online store.
-You can find all relevant models in the dbt-project folder, while the source Python scripts used to load sample data into BigQuery can be found in the data-pipeline folder.
+Hello!
+Welcome my dbt project for the fake API online store (https://fakestoreapi.com/docs).
+You can find all of the relevant models in the dbt-project folder, while the source Python scripts used to load sample data into BigQuery can be found in the data-pipeline folder.
 
 ### Conceptualizing the data warehouse structure
 
 The dbt project takes shape using this folder and file structure:
+```bash
 /sample-store-project
 ├── data-pipeline
 ├── /dbt-project
 │ ├── /models
-│ │ ├──marts
-│ │ │ ├──analytics
-│ │ │ │ ├──monthly_sales.sql
-│ │ │ │ ├──top_selling_products.sql
-│ │ │ ├──core
-│ │ │ │ ├──customer_order_summary.sql
-│ │ │ │ ├──order_details.sql
-│ │ │ │ ├──product_sales.sql  
- │ │ │ ├──reporting  
- │ │ │ │ ├──order_level_report.sql
-│ │ ├──staging
-│ │ │ ├──sources.yml
-│ │ │ ├──stg_carts.sql
-│ │ │ ├──stg_products.sql
-│ │ │ ├──stg_users.sql
-│ │ ├──seeds
-│ │ ├──snapshots
-│ │ ├──tests  
- │ │ │ ├──carts_data_quality.sql
-│ │ │ ├──product_data_quality.sql
-│ │ │ ├──users_data_quality.sql
+│ │ ├── marts
+│ │ │ ├── analytics
+│ │ │ │ ├── monthly_sales.sql
+│ │ │ │ ├── top_selling_products.sql
+│ │ │ ├── core
+│ │ │ │ ├── customer_order_summary.sql
+│ │ │ │ ├── order_details.sql
+│ │ │ │ ├── product_sales.sql  
+│ │ │ ├── reporting  
+│ │ │ │ ├── order_level_report.sql
+│ │ ├── staging
+│ │ │ ├── sources.yml
+│ │ │ ├── stg_carts.sql
+│ │ │ ├── stg_products.sql
+│ │ │ ├── stg_users.sql
+│ │ ├── seeds
+│ │ ├── snapshots
+│ │ ├── tests  
+│ │ │ ├── carts_data_quality.sql
+│ │ │ ├── product_data_quality.sql
+│ │ │ ├── users_data_quality.sql
 ├── dbt_project.yml  
- ├── profiles.yml
-
+├── profiles.yml
+```
+Some details:
 - models/staging: this folder contains the staging tables used to pull from the raw data tables using some light transformations.
 - models/marts: this folder contains analyses done on the staging tables.
   - models/marts/analytics: this folder contains any ad-hoc analytics or compelling data points about the data that might be helpful on a time series.
@@ -54,4 +57,7 @@ The dbt project takes shape using this folder and file structure:
 
 ### Creating a final order-level fact table
 
-- I have implemented a star schema approach to create the final order-level table. The lineage looks like this:
+- I have implemented a star schema approach to create the final order-level table. The final order_level_report table can be used to run BI reports off of. The lineage looks like this:
+
+<img width="962" alt="Screenshot 2025-01-26 at 5 26 51 PM" src="https://github.com/user-attachments/assets/9f05907e-f58c-48cf-8b16-91a8d2ddbf4c" />
+
