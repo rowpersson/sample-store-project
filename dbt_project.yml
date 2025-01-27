@@ -36,5 +36,5 @@ models:
       analytics:
         +materialized: view  # Models in 'analytics' will be materialized as views.
       reporting:
-        +materialized: view  # Models in 'analytics' will be materialized as views.
+        +materialized: table  # Models in 'reporting' will be materialized as views.
 
